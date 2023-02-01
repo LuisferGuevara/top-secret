@@ -5,18 +5,18 @@ import Home from '../Home';
 import { Navbar } from "./Pages/Navbar/Navbar";
 import Pie from "./Pages/Footer/Footer";
 import Wellcome from './Pages/Home';
-import { Box } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 
 const Lounge = () => {
   return (
-    <div>
+    <Flex  flexDirection={"column"} w="98vw" justifyContent={"space-between"}   h="100%">
       <Navbar />
       <Box p={8} fle x="1">
 
           <Outlet />
         </Box>
       <Pie />
-    </div>
+    </Flex>
   );
 };
 

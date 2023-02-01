@@ -1,5 +1,4 @@
 import {
-  //   Avatar,
   Box,
   Button,
   ButtonGroup,
@@ -22,8 +21,8 @@ import {
   FiSun,
   FiChevronUp,
 } from "react-icons/fi";
-// import logo2 from "../../../assets/images/logoWhite.png";
-// import logo from "../../../assets/images/logoBlack.png";
+import logo2 from "../../../../assets/images/logoWhite.png";
+import logo from "../../../../assets/images/logoBlack.png";
 
 import { NavLink } from "react-router-dom";
 //import "./Navbar.scss";
@@ -80,15 +79,15 @@ export const Navbar = () => {
     >
       {hasScrolled ? (
         <Box as="nav" h="140px" p="0 20px"
-       backgroundImage={`linear-gradient(to right, #24243e, #302b63, #0f0c29)`}
+       bgGradient={`linear-gradient(to right, #24243e, #302b63, #0f0c29)`}
         >
           <Flex justify="space-between" p="30px 0 5px 0" maxW={"1440px"} m="0 auto">
             <Flex>
-              <NavLink to="/">
+              <NavLink to="/lounge/home">
                 {/* {hasScrolled ? ( */}
                 <Image
-                  // src={logo2}
-                  alt="Papi"
+                  src={logo2}
+                  alt="Logo Uniforme Azul"
                   objectFit="contain"
                   w="178px"
                   h="95%"
@@ -109,7 +108,7 @@ export const Navbar = () => {
                 <ButtonGroup color="white">
                   <Button
                     as={NavLink}
-                    to="/"
+                    to="/lounge/home"
                     bg="transparent"
                     _hover={{ color: "#23375b", bg: "orange.300" }}
                   >
@@ -117,7 +116,7 @@ export const Navbar = () => {
                   </Button>
                   <Button
                     as={NavLink}
-                    to="/courses"
+                    to="/lounge/courses"
                     bg="transparent"
                     _hover={{ color: "#23375b", bg: "orange.300" }}
                   >
@@ -125,7 +124,7 @@ export const Navbar = () => {
                   </Button>
                   <Button
                     as={NavLink}
-                    to="/freetests"
+                    to="/lounge/freetests"
                     bg="transparent"
                     _hover={{ color: "#23375b", bg: "orange.300" }}
                   >
@@ -133,7 +132,7 @@ export const Navbar = () => {
                   </Button>
                   <Button
                     as={NavLink}
-                    to="/shop"
+                    to="/lounge/shop"
                     bg="transparent"
                     _hover={{ color: "#23375b", bg: "orange.300" }}
                   >
@@ -141,7 +140,7 @@ export const Navbar = () => {
                   </Button>
                   <Button
                     as={NavLink}
-                    to="/contact"
+                    to="/lounge/contact"
                     bg="transparent"
                     _hover={{ color: "#23375b", bg: "orange.300" }}
                   >
@@ -163,7 +162,7 @@ export const Navbar = () => {
                   </Flex>
                   <IconButton
                     as={NavLink}
-                    to="/cart"
+                    to="/lounge/cart"
                     icon={<FiShoppingCart fontSize="1.25rem" />}
                     color="white"
                     _hover={{ color: "#23375b", bg: "orange.300" }}
@@ -171,7 +170,7 @@ export const Navbar = () => {
                   <IconButton
                     as={NavLink}
                     // to="/myaccount"  --> Cuando podamos privatizar la ruta con el token
-                    to="/login"
+                    to="/lounge/login"
                     icon={<FiUser fontSize="1.25rem" />}
                     color="white"
                     _hover={{ color: "#23375b", bg: "orange.300" }}
@@ -228,7 +227,7 @@ export const Navbar = () => {
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
-                      to="/forall/home"
+                      to="/lounge/home"
                       w="100%"
                       borderRadius={0}
                       bg="transparent"
@@ -241,7 +240,7 @@ export const Navbar = () => {
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
-                      to="/courses"
+                      to="/lounge/courses"
                       w="100%"
                       borderRadius={0}
                       py={7}
@@ -252,7 +251,7 @@ export const Navbar = () => {
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
-                      to="/freetests"
+                      to="/lounge/freetests"
                       w="100%"
                       borderRadius={0}
                       py={7}
@@ -263,7 +262,7 @@ export const Navbar = () => {
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
-                      to="/shop"
+                      to="/lounge/shop"
                       w="100%"
                       borderRadius={0}
                       py={7}
@@ -274,7 +273,7 @@ export const Navbar = () => {
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
-                      to="/contact"
+                      to="/lounge/contact"
                       w="100%"
                       borderRadius={0}
                       py={7}
@@ -285,7 +284,7 @@ export const Navbar = () => {
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
-                      to="/cart"
+                      to="/lounge/cart"
                       w="100%"
                       borderRadius={0}
                       py={7}
@@ -296,7 +295,7 @@ export const Navbar = () => {
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
-                      to="/login"
+                      to="/lounge/login"
                       w="100%"
                       borderRadius={0}
                       py={7}
@@ -372,9 +371,9 @@ export const Navbar = () => {
         <Box as="nav" h="18vh" p="0 20px">
           <Flex justify="space-between" p="30px 0 5px 0">
             <Flex>
-              <NavLink to="/">
+              <NavLink to="/lounge/home">
                 <Image
-                  // src={logo}
+                  src={logo}
                   alt="Papi"
                   objectFit="contain"
                   w="178px"
@@ -387,7 +386,7 @@ export const Navbar = () => {
                 <ButtonGroup color="#23375b">
                   <Button
                     as={NavLink}
-                    to="/"
+                    to="/lounge/home"
                     bg="transparent"
                     _hover={{ bg: "orange.300" }}
                   >
@@ -395,7 +394,7 @@ export const Navbar = () => {
                   </Button>
                   <Button
                     as={NavLink}
-                    to="/courses"
+                    to="/lounge/courses"
                     bg="transparent"
                     _hover={{ bg: "orange.300" }}
                   >
@@ -403,7 +402,7 @@ export const Navbar = () => {
                   </Button>
                   <Button
                     as={NavLink}
-                    to="/freetests"
+                    to="/lounge/freetests"
                     bg="transparent"
                     _hover={{ bg: "orange.300" }}
                   >
@@ -411,7 +410,7 @@ export const Navbar = () => {
                   </Button>
                   <Button
                     as={NavLink}
-                    to="/shop"
+                    to="/lounge/shop"
                     bg="transparent"
                     _hover={{ bg: "orange.300" }}
                   >
@@ -419,7 +418,7 @@ export const Navbar = () => {
                   </Button>
                   <Button
                     as={NavLink}
-                    to="/contact"
+                    to="/lounge/contact"
                     bg="transparent"
                     _hover={{ bg: "orange.300" }}
                   >
@@ -441,7 +440,7 @@ export const Navbar = () => {
                   </Flex>
                   <IconButton
                     as={NavLink}
-                    to="/cart"
+                    to="/lounge/cart"
                     icon={<FiShoppingCart fontSize="1.25rem" />}
                     color="#23375b"
                     _hover={{ bg: "orange.300" }}
@@ -449,7 +448,7 @@ export const Navbar = () => {
                   <IconButton
                     as={NavLink}
                     // to="/myaccount"  --> Cuando podamos privatizar la ruta con el token
-                    to="/login"
+                    to="/lounge/login"
                     icon={<FiUser fontSize="1.25rem" />}
                     color="#23375b"
                     _hover={{ bg: "orange.300" }}
@@ -507,7 +506,7 @@ export const Navbar = () => {
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
-                      to="/"
+                      to="/lounge/home"
                       w="100%"
                       borderRadius={0}
                       bg="transparent"
@@ -520,7 +519,7 @@ export const Navbar = () => {
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
-                      to="/courses"
+                      to="/lounge/courses"
                       w="100%"
                       borderRadius={0}
                       py={7}
@@ -531,7 +530,7 @@ export const Navbar = () => {
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
-                      to="/freetests"
+                      to="/lounge/freetests"
                       w="100%"
                       borderRadius={0}
                       py={7}
@@ -542,7 +541,7 @@ export const Navbar = () => {
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
-                      to="/shop"
+                      to="/lounge/shop"
                       w="100%"
                       borderRadius={0}
                       py={7}
@@ -553,7 +552,7 @@ export const Navbar = () => {
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
-                      to="/contact"
+                      to="/lounge/contact"
                       w="100%"
                       borderRadius={0}
                       py={7}
@@ -564,7 +563,7 @@ export const Navbar = () => {
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
-                      to="/cart"
+                      to="/lounge/cart"
                       w="100%"
                       borderRadius={0}
                       py={7}
@@ -575,7 +574,7 @@ export const Navbar = () => {
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
-                      to="/login"
+                      to="/lounge/login"
                       w="100%"
                       borderRadius={0}
                       py={7}
