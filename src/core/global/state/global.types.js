@@ -1,0 +1,2 @@
+export const START_SPINNER = 'START_SPINNER';
+export const REMOVE_SPINNER = 'REMOVE_SPINNER';

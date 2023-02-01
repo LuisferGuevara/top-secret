@@ -1,0 +1,73 @@
+{
+  "name": "uniforme-azul-front",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.jsx",
+  "type": "module",
+  "scripts": {
+    "serve": "vite preview",
+    "build": "vite build",
+    "staging": "vite --mode staging",
+    "dev": "vite --mode dev",
+    "start": "vite --mode dev",
+    "prod": "vite --mode prod",
+    "test": "test",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "stats": "npx cloc src package.json README.md build public --by-file-by-lang",
+    "analyze": "vite build --mode staging --report"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "author": "Rocket418",
+  "resolutions": {
+    "react-devtools-core": "4.14.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.17",
+    "@chakra-ui/react": "^2.4.9",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "axios": "^1.2.3",
+    "framer-motion": "^8.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.42.1",
+    "react-icons": "^4.7.1",
+    "react-redux": "^8.0.5",
+    "react-router": "^6.7.0",
+    "react-router-dom": "^6.7.0",
+    "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.2",
+    "vite-plugin-svgr": "^2.4.0",
+    "web-vitals": "^3.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "eslint": "^8.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.4",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jest": "^29.3.1",
+    "prettier": "^2.8.3",
+    "vite": "^4.0.0"
+  }
+}
