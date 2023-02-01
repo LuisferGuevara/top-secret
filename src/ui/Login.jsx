@@ -113,21 +113,25 @@ import {
   Container,
 } from '@chakra-ui/react';
 import * as React from 'react';
+import { useForm } from 'react-hook-form'
 import { HiEye, HiEyeOff } from 'react-icons/hi';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaLock, FaUserAlt } from 'react-icons/fa';
 import useSpinner from '../hooks/useSpinner.hook';
+import authUseCases from '../core/auth/domain/auth.usecases';
 
 export const Login = props => {
   const [isHidden, setIsHidden] = useState(true);
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
+  const { register, handleSubmit } = useForm();
+  const { login } = authUseCases();
   const { loginSpinner } = useSpinner();
 
-  const handleSubmit = e => {
+  /* const handleSubmit = e => {
     e.preventDefault(); //para hacer login con email o username
-  };
+  }; */
 
   return (
     <Container
@@ -169,7 +173,7 @@ export const Login = props => {
           </Stack>
           <Stack spacing="12">
             <Stack spacing="12">
-              <FormControl w="90%" alignSelf="center">
+              <FormControl isRequired w="90%" alignSelf="center">
                 {/* En el controlador de inicio de sesión en el servidor, se puede verificar si el identificador 
                 proporcionado es un email o un username y luego buscar en la base de datos el usuario correspondiente. 
                 De esta manera, el usuario puede iniciar sesión con su email o su username sin tener que preocuparse 
@@ -180,18 +184,19 @@ export const Login = props => {
                 <Input
                   bg="gray.300"
                   id="email"
-                  type="text"
+                  type="email"
                   color="#23375B"
                   fontSize={'1.2rem'}
                   fontWeight="semibold"
-                  value={identifier}
-                  onChange={e => setIdentifier(e.target.value)}
+                  {...register ('email')}
+                  // value={identifier}
+                  // onChange={e => setIdentifier(e.target.value)}
                   placeholder="Introduce tu email o nombre de usuario"
                   _placeholder={{ color: '#23375B', fontSize: 'lg' }}
                   icon={<FaUserAlt />}
                 />
               </FormControl>
-              <FormControl w="90%" alignSelf="center">
+              <FormControl isRequired w="90%" alignSelf="center">
                 <FormLabel htmlFor="password" color="whitesmoke" fontSize={'1.2rem'}>
                   Contraseña
                 </FormLabel>
@@ -214,8 +219,9 @@ export const Login = props => {
                     color="#23375B"
                     fontSize={'1.2rem'}
                     fontWeight="semibold"
-                    value={password}
-                    onChange={e => setPassword(e.target.value)}
+                    {...register('password')}
+                    // value={password}
+                    // onChange={e => setPassword(e.target.value)}
                     placeholder={'Introduce tu contraseña'}
                     _placeholder={{ color: '#23375B', fontSize: 'lg' }}
                     icon={<FaLock />} //no se ve icono
@@ -242,6 +248,7 @@ export const Login = props => {
                 color="whitesmoke"
                 border="1px solid orange"
                 fontWeight={'bold'}
+                variant='solid'
                 // to="/campus" la idea es que después del login nos redirija al campus virtual
                 isLoading={loginSpinner}
                 loadingText="Accediendo..."
@@ -250,8 +257,8 @@ export const Login = props => {
                   color: '#23375B',
                 }}
               >
-                {' '}
-                INICIAR SESIÓN
+                {/* {' '} */}
+                ENTRAR
               </Button>
             </Stack>
             <Stack pt="2em">
