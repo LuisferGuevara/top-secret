@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
-const Welcome = () => {
+const HomeLounge = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
 
   return (
@@ -390,4 +390,4 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
+export default HomeLounge;

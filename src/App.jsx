@@ -14,7 +14,6 @@ import Account from './ui/Dashboard/Account';
 import Settings from './ui/Dashboard/Settings';
 import Admin from './ui/Dashboard/Admin/Admin';
 import Lounge from './ui/Lounge/Lounge';
-import Welcome from './ui/Lounge/Pages/Home';
 import Shop from './ui/Lounge/Pages/Shop/Shop';
 import Contact from './ui/Lounge/Pages/Contact/Contact';
 import { Cart } from './ui/Lounge/Pages/Cart/Cart';
@@ -22,6 +21,7 @@ import Payment from './ui/Lounge/Pages/Payment/Payment';
 import About from './ui/Lounge/Pages/Info/About';
 import Cookies from './ui/Lounge/Pages/Info/Cookies';
 import TermsConditions from './ui/Lounge/Pages/Info/TermsConditions';
+import HomeLounge from './ui/Lounge/Pages/Home/Home';
 
 
 
@@ -47,7 +47,7 @@ const App = () => {
       >
         <Routes>
         <Route path="lounge"  element={<Lounge/>}>
-          <Route path='home' element={<Welcome/>}/>
+          <Route path='home' element={<HomeLounge/>}/>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="shop" element={<Shop/>} />
