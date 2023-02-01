@@ -10,26 +10,16 @@ import {
   Input,
   Collapse,
   Container,
-} from "@chakra-ui/react";
-import React, { useState, useEffect, useRef } from "react";
-import {
-  FiUser,
-  FiMenu,
-  FiSearch,
-  FiShoppingCart,
-  FiMoon,
-  FiSun,
-  FiChevronUp,
-} from "react-icons/fi";
-import logo2 from "../../../../assets/images/logoWhite.png";
-import logo from "../../../../assets/images/logoBlack.png";
-
-import { NavLink } from "react-router-dom";
-//import "./Navbar.scss";
+} from '@chakra-ui/react';
+import React, { useState, useEffect, useRef } from 'react';
+import { FiUser, FiMenu, FiSearch, FiShoppingCart, FiMoon, FiSun, FiChevronUp } from 'react-icons/fi';
+import logo2 from '../../../../assets/images/logoWhite.png';
+import logo from '../../../../assets/images/logoBlack.png';
+import { NavLink } from 'react-router-dom';
 
 export const Navbar = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const [showInput, setShowInput] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -43,9 +33,9 @@ export const Navbar = () => {
   const menuRef = useRef(null);
 
   useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, []);
 
@@ -58,9 +48,9 @@ export const Navbar = () => {
         setHasScrolled(false);
       }
     }
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -78,71 +68,63 @@ export const Navbar = () => {
       // zIndex={1}
     >
       {hasScrolled ? (
-        <Box as="nav" h="140px" p="0 20px"
-       bgGradient={`linear-gradient(to right, #24243e, #302b63, #0f0c29)`}
-        >
-          <Flex justify="space-between" p="30px 0 5px 0" maxW={"1440px"} m="0 auto">
+        <Box as="nav" h="140px" p="0 20px" bgGradient={`linear-gradient(to right, #24243e, #302b63, #0f0c29)`}>
+          <Flex justify="space-between" p="30px 0 5px 0" maxW={'1440px'} m="0 auto">
             <Flex>
               <NavLink to="/lounge/home">
-                {/* {hasScrolled ? ( */}
-                <Image
-                  src={logo2}
-                  alt="Logo Uniforme Azul"
-                  objectFit="contain"
-                  w="178px"
-                  h="95%"
-                />
-                {/* ) : (
-                <Image
-                  src={logo}
-                  alt="Dan Abramov"
-                  objectFit="contain"
-                  w="180px"
-                  h="100%"
-                />
-              )} */}
+                <Image src={logo2} alt="Uniforme Azul" objectFit="contain" w="178px" h="95%" />
               </NavLink>
             </Flex>
             <HStack>
               {isDesktop && (
-                <ButtonGroup color="white">
+                <ButtonGroup>
                   <Button
                     as={NavLink}
                     to="/lounge/home"
+                    color="white"
                     bg="transparent"
-                    _hover={{ color: "#23375b", bg: "orange.300" }}
+                    _hover={{ color: '#37496A', bg: 'orange.300' }}
+                    _activeLink={{ color: '#37496A', bg: 'orange.300' }}
                   >
                     Inicio
                   </Button>
                   <Button
                     as={NavLink}
                     to="/lounge/courses"
+                    color="white"
                     bg="transparent"
-                    _hover={{ color: "#23375b", bg: "orange.300" }}
+                    _hover={{ color: '#37496A', bg: 'orange.300' }}
+                    _activeLink={{ color: '#37496A', bg: 'orange.300' }}
                   >
                     Cursos
                   </Button>
                   <Button
                     as={NavLink}
                     to="/lounge/freetests"
+                    color="white"
                     bg="transparent"
-                    _hover={{ color: "#23375b", bg: "orange.300" }}
+                    _hover={{ color: '#37496A', bg: 'orange.300' }}
+                    _activeLink={{ color: '#37496A', bg: 'orange.300' }}
                   >
                     Tests Gratis
                   </Button>
                   <Button
                     as={NavLink}
                     to="/lounge/shop"
+                    color="white"
                     bg="transparent"
-                    _hover={{ color: "#23375b", bg: "orange.300" }}
+                    _hover={{ color: '#37496A', bg: 'orange.300' }}
+                    _activeLink={{ color: '#37496A', bg: 'orange.300' }}
                   >
                     Tienda
                   </Button>
                   <Button
                     as={NavLink}
                     to="/lounge/contact"
+                    color="white"
                     bg="transparent"
-                    _hover={{ color: "#23375b", bg: "orange.300" }}
+                    _hover={{ color: '#37496A', bg: 'orange.300' }}
+                    _activeLink={{ color: '#37496A', bg: 'orange.300' }}
                   >
                     Contacto
                   </Button>
@@ -151,13 +133,14 @@ export const Navbar = () => {
             </HStack>
             {isDesktop ? (
               <HStack spacing="4">
-                <ButtonGroup variant="ghost" spacing="1">
+                <ButtonGroup spacing="1">
                   <Flex flexDirection="column">
                     <IconButton
                       onClick={() => setShowInput(!showInput)}
                       icon={<FiSearch fontSize="1.25rem" />}
                       color="white"
-                      _hover={{ color: "#23375b", bg: "orange.300" }}
+                      bg="transparent"
+                      _hover={{ color: '#37496A', bg: 'orange.300' }}
                     />
                   </Flex>
                   <IconButton
@@ -165,26 +148,25 @@ export const Navbar = () => {
                     to="/lounge/cart"
                     icon={<FiShoppingCart fontSize="1.25rem" />}
                     color="white"
-                    _hover={{ color: "#23375b", bg: "orange.300" }}
+                    bg="transparent"
+                    _hover={{ color: '#37496A', bg: 'orange.300' }}
+                    _activeLink={{ color: '#37496A', bg: 'orange.300' }}
                   />
                   <IconButton
-                    as={NavLink}
                     // to="/myaccount"  --> Cuando podamos privatizar la ruta con el token
+                    as={NavLink}
                     to="/lounge/login"
                     icon={<FiUser fontSize="1.25rem" />}
                     color="white"
-                    _hover={{ color: "#23375b", bg: "orange.300" }}
+                    bg="transparent"
+                    _hover={{ color: '#37496A', bg: 'orange.300' }}
+                    _activeLink={{ color: '#37496A', bg: 'orange.300' }}
                   />
                   <IconButton
-                    icon={
-                      darkMode ? (
-                        <FiSun fontSize="1.25rem" />
-                      ) : (
-                        <FiMoon fontSize="1.25rem" />
-                      )
-                    }
+                    icon={darkMode ? <FiSun fontSize="1.25rem" /> : <FiMoon fontSize="1.25rem" />}
                     color="white"
-                    _hover={{ color: "#23375b", bg: "orange.300" }}
+                    bg="transparent"
+                    _hover={{ color: '#37496A', bg: 'orange.300' }}
                     onClick={() => setDarkMode(!darkMode)}
                   >
                     Toggle Theme
@@ -194,10 +176,7 @@ export const Navbar = () => {
               </HStack>
             ) : (
               <Box display="flex" position="relative" zIndex="1">
-                <Collapse
-                  in={isOpen}
-                  style={{ position: "absolute", top: "80px", right: "-25px" }}
-                >
+                <Collapse in={isOpen} style={{ position: 'absolute', top: '80px', right: '-20px' }}>
                   <Box
                     display="flex"
                     flexDirection="column"
@@ -207,33 +186,35 @@ export const Navbar = () => {
                     h="300vh"
                     p="5% 0"
                     bg="whitesmoke"
-                    color="#23375b"
                   >
                     <Input
                       value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      onKeyPress={(e) => {
-                        if (e.key === "Enter") {
+                      onChange={e => setSearchTerm(e.target.value)}
+                      onKeyPress={e => {
+                        if (e.key === 'Enter') {
                           handleSearch();
                         }
                       }}
-                      placeholder="Buscar..."
-                      _placeholder={{ color: "gray" }}
-                      _hover={{ border: "solid 1px orange" }}
                       w="50%"
-                      border="solid 1px #8AB3F2"
+                      color="#37496A"
                       textAlign="center"
+                      border="solid 1px #8AB3F2"
+                      placeholder="Buscar..."
+                      _placeholder={{ color: 'gray' }}
+                      _hover={{ border: 'solid 1px orange' }}
                     />
                     <Button
                       onClick={() => setIsOpen(false)}
                       as={NavLink}
                       to="/lounge/home"
                       w="100%"
-                      borderRadius={0}
-                      bg="transparent"
                       mt={3}
                       py={7}
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      borderRadius={0}
+                      _hover={{ bg: 'orange.300' }}
+                      _activeLink={{ bg: 'orange.300' }}
                     >
                       Inicio
                     </Button>
@@ -242,9 +223,12 @@ export const Navbar = () => {
                       as={NavLink}
                       to="/lounge/courses"
                       w="100%"
-                      borderRadius={0}
                       py={7}
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      borderRadius={0}
+                      _hover={{ bg: 'orange.300' }}
+                      _activeLink={{ bg: 'orange.300' }}
                     >
                       Cursos
                     </Button>
@@ -253,9 +237,12 @@ export const Navbar = () => {
                       as={NavLink}
                       to="/lounge/freetests"
                       w="100%"
-                      borderRadius={0}
                       py={7}
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      borderRadius={0}
+                      _hover={{ bg: 'orange.300' }}
+                      _activeLink={{ bg: 'orange.300' }}
                     >
                       Tests Gratis
                     </Button>
@@ -264,9 +251,12 @@ export const Navbar = () => {
                       as={NavLink}
                       to="/lounge/shop"
                       w="100%"
-                      borderRadius={0}
                       py={7}
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      borderRadius={0}
+                      _hover={{ bg: 'orange.300' }}
+                      _activeLink={{ bg: 'orange.300' }}
                     >
                       Tienda
                     </Button>
@@ -275,9 +265,12 @@ export const Navbar = () => {
                       as={NavLink}
                       to="/lounge/contact"
                       w="100%"
-                      borderRadius={0}
                       py={7}
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      borderRadius={0}
+                      _hover={{ bg: 'orange.300' }}
+                      _activeLink={{ bg: 'orange.300' }}
                     >
                       Contacto
                     </Button>
@@ -286,9 +279,12 @@ export const Navbar = () => {
                       as={NavLink}
                       to="/lounge/cart"
                       w="100%"
-                      borderRadius={0}
                       py={7}
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      borderRadius={0}
+                      _hover={{ bg: 'orange.300' }}
+                      _activeLink={{ bg: 'orange.300' }}
                     >
                       Carrito
                     </Button>
@@ -297,9 +293,12 @@ export const Navbar = () => {
                       as={NavLink}
                       to="/lounge/login"
                       w="100%"
-                      borderRadius={0}
                       py={7}
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      borderRadius={0}
+                      _hover={{ bg: 'orange.300' }}
+                      _activeLink={{ bg: 'orange.300' }}
                     >
                       Mi cuenta
                     </Button>
@@ -308,33 +307,21 @@ export const Navbar = () => {
                 <Box>
                   <Flex justifyContent="end">
                     <IconButton
-                      icon={
-                        darkMode ? (
-                          <FiSun fontSize="1.25rem" />
-                        ) : (
-                          <FiMoon fontSize="1.25rem" />
-                        )
-                      }
+                      icon={darkMode ? <FiSun fontSize="1.25rem" /> : <FiMoon fontSize="1.25rem" />}
                       onClick={() => setDarkMode(!darkMode)}
-                      variant="ghost"
                       color="white"
-                      _hover={{ color: "#23375b", bg: "orange.300" }}
+                      bg="transparent"
+                      _hover={{ color: '#37496A', bg: 'orange.300' }}
                     >
                       Toggle Theme
                     </IconButton>
                     <IconButton
-                      variant="ghost"
-                      icon={
-                        isOpen ? (
-                          <FiChevronUp fontSize="1.25rem" />
-                        ) : (
-                          <FiMenu fontSize="1.25rem" />
-                        )
-                      }
-                      // ref={menuRef}
+                      // variant="ghost"
+                      icon={isOpen ? <FiChevronUp fontSize="1.25rem" /> : <FiMenu fontSize="1.25rem" />}
                       onClick={() => setIsOpen(!isOpen)}
                       color="white"
-                      _hover={{ color: "#23375b", bg: "orange.300" }}
+                      bg="transparent"
+                      _hover={{ color: '#37496A', bg: 'orange.300' }}
                     />
                   </Flex>
                 </Box>
@@ -347,20 +334,21 @@ export const Navbar = () => {
                 <Flex>
                   <Input
                     value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onChange={e => setSearchTerm(e.target.value)}
                     onBlur={() => setShowInput(false)}
-                    placeholder="Buscar..."
-                    _placeholder={{ color: "gray" }}
-                    textAlign="center"
-                    color="white"
-                    border="solid 1px whitesmoke"
-                    _hover={{ border: "solid 1px orange" }}
-                    display={showInput ? "block" : "none"}
-                    onKeyPress={(e) => {
-                      if (e.key === "Enter") {
+                    display={showInput ? 'block' : 'none'}
+                    onKeyPress={e => {
+                      if (e.key === 'Enter') {
                         handleSearch();
                       }
                     }}
+                    textAlign="center"
+                    color="white"
+                    bg="transparent"
+                    border="solid 1px whitesmoke"
+                    placeholder="Buscar..."
+                    _placeholder={{ color: 'gray' }}
+                    _hover={{ border: 'solid 1px orange' }}
                   />
                 </Flex>
               </Container>
@@ -369,58 +357,62 @@ export const Navbar = () => {
         </Box>
       ) : (
         <Box as="nav" h="18vh" p="0 20px">
-          <Flex justify="space-between" p="30px 0 5px 0">
+          <Flex justify="space-between" p="30px 0 5px 0" maxW={'1440px'} m="0 auto">
             <Flex>
               <NavLink to="/lounge/home">
-                <Image
-                  src={logo}
-                  alt="Papi"
-                  objectFit="contain"
-                  w="178px"
-                  h="95%"
-                />
+                <Image src={logo} alt="Uniforme Azul" objectFit="contain" w="178px" h="95%" />
               </NavLink>
             </Flex>
             <HStack>
               {isDesktop && (
-                <ButtonGroup color="#23375b">
+                <ButtonGroup>
                   <Button
                     as={NavLink}
                     to="/lounge/home"
+                    color="#37496A"
                     bg="transparent"
-                    _hover={{ bg: "orange.300" }}
+                    _hover={{ bg: 'orange.300' }}
+                    _activeLink={{ bg: 'orange.300' }}
                   >
                     Inicio
                   </Button>
                   <Button
                     as={NavLink}
                     to="/lounge/courses"
+                    color="#37496A"
                     bg="transparent"
-                    _hover={{ bg: "orange.300" }}
+                    _hover={{ bg: 'orange.300' }}
+                    _activeLink={{ bg: 'orange.300' }}
                   >
                     Cursos
                   </Button>
                   <Button
                     as={NavLink}
                     to="/lounge/freetests"
+                    color="#37496A"
                     bg="transparent"
-                    _hover={{ bg: "orange.300" }}
+                    _hover={{ bg: 'orange.300' }}
+                    _activeLink={{ bg: 'orange.300' }}
                   >
                     Tests Gratis
                   </Button>
                   <Button
                     as={NavLink}
                     to="/lounge/shop"
+                    color="#37496A"
                     bg="transparent"
-                    _hover={{ bg: "orange.300" }}
+                    _hover={{ bg: 'orange.300' }}
+                    _activeLink={{ bg: 'orange.300' }}
                   >
                     Tienda
                   </Button>
                   <Button
                     as={NavLink}
                     to="/lounge/contact"
+                    color="#37496A"
                     bg="transparent"
-                    _hover={{ bg: "orange.300" }}
+                    _hover={{ bg: 'orange.300' }}
+                    _activeLink={{ bg: 'orange.300' }}
                   >
                     Contacto
                   </Button>
@@ -429,41 +421,41 @@ export const Navbar = () => {
             </HStack>
             {isDesktop ? (
               <HStack spacing="4">
-                <ButtonGroup variant="ghost" spacing="1">
+                <ButtonGroup spacing="1">
                   <Flex flexDirection="column">
                     <IconButton
                       onClick={() => setShowInput(!showInput)}
                       icon={<FiSearch fontSize="1.25rem" />}
-                      color="#23375b"
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      _hover={{ bg: 'orange.300' }}
                     />
                   </Flex>
                   <IconButton
                     as={NavLink}
                     to="/lounge/cart"
                     icon={<FiShoppingCart fontSize="1.25rem" />}
-                    color="#23375b"
-                    _hover={{ bg: "orange.300" }}
+                    color="#37496A"
+                    bg="transparent"
+                    _hover={{ bg: 'orange.300' }}
+                    _activeLink={{ bg: 'orange.300' }}
                   />
                   <IconButton
-                    as={NavLink}
                     // to="/myaccount"  --> Cuando podamos privatizar la ruta con el token
+                    as={NavLink}
                     to="/lounge/login"
                     icon={<FiUser fontSize="1.25rem" />}
-                    color="#23375b"
-                    _hover={{ bg: "orange.300" }}
+                    color="#37496A"
+                    bg="transparent"
+                    _hover={{ bg: 'orange.300' }}
+                    _activeLink={{ bg: 'orange.300' }}
                   />
                   <IconButton
-                    icon={
-                      darkMode ? (
-                        <FiSun fontSize="1.25rem" />
-                      ) : (
-                        <FiMoon fontSize="1.25rem" />
-                      )
-                    }
+                    icon={darkMode ? <FiSun fontSize="1.25rem" /> : <FiMoon fontSize="1.25rem" />}
                     onClick={() => setDarkMode(!darkMode)}
-                    color="#23375b"
-                    _hover={{ bg: "orange.300" }}
+                    color="#37496A"
+                    bg="transparent"
+                    _hover={{ bg: 'orange.300' }}
                   >
                     Toggle Theme
                   </IconButton>
@@ -472,10 +464,7 @@ export const Navbar = () => {
               </HStack>
             ) : (
               <Box display="flex" position="relative" zIndex="1">
-                <Collapse
-                  in={isOpen}
-                  style={{ position: "absolute", top: "80px", right: "-25px" }}
-                >
+                <Collapse in={isOpen} style={{ position: 'absolute', top: '80px', right: '-25px' }}>
                   <Box
                     display="flex"
                     flexDirection="column"
@@ -484,101 +473,121 @@ export const Navbar = () => {
                     w="100vw"
                     h="300vh"
                     p="5% 0"
+                    color="#37496A"
                     bg="whitesmoke"
-                    color="#23375b"
                   >
                     <Input
                       value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      onKeyPress={(e) => {
-                        if (e.key === "Enter") {
+                      onChange={e => setSearchTerm(e.target.value)}
+                      onKeyPress={e => {
+                        if (e.key === 'Enter') {
                           handleSearch();
                         }
                       }}
-                      placeholder="Buscar..."
-                      _placeholder={{ color: "gray" }}
-                      color="#23375b"
                       w="50%"
-                      border="solid 1px gray"
                       textAlign="center"
-                      _hover={{ border: "solid 1px orange" }}
+                      color="#37496A"
+                      border="solid 1px gray"
+                      placeholder="Buscar..."
+                      _placeholder={{ color: 'gray' }}
+                      _hover={{ border: 'solid 1px orange' }}
                     />
                     <Button
-                      onClick={() => setIsOpen(false)}
                       as={NavLink}
                       to="/lounge/home"
+                      onClick={() => setIsOpen(false)}
                       w="100%"
-                      borderRadius={0}
-                      bg="transparent"
                       mt={3}
                       py={7}
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      borderRadius={0}
+                      _hover={{ bg: 'orange.300' }}
+                      _activeLink={{ bg: 'orange.300' }}
                     >
                       Inicio
                     </Button>
                     <Button
-                      onClick={() => setIsOpen(false)}
                       as={NavLink}
                       to="/lounge/courses"
+                      onClick={() => setIsOpen(false)}
                       w="100%"
-                      borderRadius={0}
                       py={7}
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      borderRadius={0}
+                      _hover={{ bg: 'orange.300' }}
+                      _activeLink={{ bg: 'orange.300' }}
                     >
                       Cursos
                     </Button>
                     <Button
-                      onClick={() => setIsOpen(false)}
                       as={NavLink}
                       to="/lounge/freetests"
+                      onClick={() => setIsOpen(false)}
                       w="100%"
-                      borderRadius={0}
                       py={7}
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      borderRadius={0}
+                      _hover={{ bg: 'orange.300' }}
+                      _activeLink={{ bg: 'orange.300' }}
                     >
                       Tests Gratis
                     </Button>
                     <Button
-                      onClick={() => setIsOpen(false)}
                       as={NavLink}
                       to="/lounge/shop"
+                      onClick={() => setIsOpen(false)}
                       w="100%"
-                      borderRadius={0}
                       py={7}
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      borderRadius={0}
+                      _hover={{ bg: 'orange.300' }}
+                      _activeLink={{ bg: 'orange.300' }}
                     >
                       Tienda
                     </Button>
                     <Button
-                      onClick={() => setIsOpen(false)}
                       as={NavLink}
                       to="/lounge/contact"
+                      onClick={() => setIsOpen(false)}
                       w="100%"
-                      borderRadius={0}
                       py={7}
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      borderRadius={0}
+                      _hover={{ bg: 'orange.300' }}
+                      _activeLink={{ bg: 'orange.300' }}
                     >
                       Contacto
                     </Button>
                     <Button
-                      onClick={() => setIsOpen(false)}
                       as={NavLink}
                       to="/lounge/cart"
+                      onClick={() => setIsOpen(false)}
                       w="100%"
-                      borderRadius={0}
                       py={7}
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      borderRadius={0}
+                      _hover={{ bg: 'orange.300' }}
+                      _activeLink={{ bg: 'orange.300' }}
                     >
                       Carrito
                     </Button>
                     <Button
-                      onClick={() => setIsOpen(false)}
                       as={NavLink}
                       to="/lounge/login"
+                      onClick={() => setIsOpen(false)}
                       w="100%"
-                      borderRadius={0}
                       py={7}
-                      _hover={{ bg: "orange.300" }}
+                      color="#37496A"
+                      bg="transparent"
+                      borderRadius={0}
+                      _hover={{ bg: 'orange.300' }}
+                      _activeLink={{ bg: 'orange.300' }}
                     >
                       Mi cuenta
                     </Button>
@@ -587,6 +596,7 @@ export const Navbar = () => {
                 <Box>
                   <Flex justifyContent="end">
                     <IconButton
+                      onClick={() => setDarkMode(!darkMode)}
                       icon={
                         darkMode ? (
                           <FiSun fontSize="1.25rem" color="#23375b" />
@@ -594,14 +604,14 @@ export const Navbar = () => {
                           <FiMoon fontSize="1.25rem" color="#23375b" />
                         )
                       }
-                      onClick={() => setDarkMode(!darkMode)}
-                      _hover={{ bg: "orange.300" }}
-                      variant="ghost"
+                      color="#37496A"
+                      bg="transparent"
+                      _hover={{ bg: 'orange.300' }}
                     >
                       Toggle Theme
                     </IconButton>
                     <IconButton
-                      variant="ghost"
+                      onClick={() => setIsOpen(!isOpen)}
                       icon={
                         isOpen ? (
                           <FiChevronUp fontSize="1.25rem" color="#23375b" />
@@ -609,9 +619,9 @@ export const Navbar = () => {
                           <FiMenu fontSize="1.25rem" color="#23375b" />
                         )
                       }
-                      // ref={menuRef}
-                      _hover={{ bg: "orange.300" }}
-                      onClick={() => setIsOpen(!isOpen)}
+                      color="#37496A"
+                      bg="transparent"
+                      _hover={{ bg: 'orange.300' }}
                     />
                   </Flex>
                 </Box>
@@ -619,25 +629,26 @@ export const Navbar = () => {
             )}
           </Flex>
           {isDesktop && (
-            <Box float="right" w="250px">
+            <Box w="250px" float="right">
               <Container>
                 <Flex>
                   <Input
                     value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onChange={e => setSearchTerm(e.target.value)}
+                    display={showInput ? 'block' : 'none'}
                     onBlur={() => setShowInput(false)}
-                    placeholder="Buscar..."
-                    _placeholder={{ color: "gray" }}
-                    textAlign="center"
-                    color="#23375b"
-                    border="solid 1px #23375b"
-                    _hover={{ border: "solid 1px orange" }}
-                    display={showInput ? "block" : "none"}
-                    onKeyPress={(e) => {
-                      if (e.key === "Enter") {
+                    onKeyPress={e => {
+                      if (e.key === 'Enter') {
                         handleSearch();
                       }
                     }}
+                    textAlign="center"
+                    color="#37496A"
+                    bg="transparent"
+                    border="solid 1px #37496A"
+                    placeholder="Buscar..."
+                    _placeholder={{ color: 'gray' }}
+                    _hover={{ border: 'solid 1px orange' }}
                   />
                 </Flex>
               </Container>
