@@ -12,13 +12,13 @@ const Dashboard = () => {
         w="full"
         direction={{ base: 'column', lg: 'row' }}
         height="100vh"
-        bg="#D3CCE3"
-        bgGradient={"linear(to right, #E9E4F0, #D3CCE3"}
+        // bg="#D3CCE3"
+        // bgGradient={"linear(to right, #E9E4F0, #D3CCE3"}
+        bg=" #96a7c8"
         overflowY="auto"
       >
         {isDesktop ? <Sidebar /> : <MobileNav />}
         <Box p={8} flex="1">
-
           <Outlet />
         </Box>
 

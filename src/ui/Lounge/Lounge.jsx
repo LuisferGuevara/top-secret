@@ -6,7 +6,8 @@ import LoungeFooter from './Pages/Footer/Footer';
 
 const Lounge = () => {
   return (
-    <Flex  flexDirection={"column"} w="100vw" justifyContent={"space-between"}   h="100%">
+    <Flex  flexDirection={"column"} w="100vw" justifyContent={"space-between"}    bg=" #96a7c8" h="100%"
+     >
       <Navbar />
       <Box p={8} fle x="1">
           <Outlet />

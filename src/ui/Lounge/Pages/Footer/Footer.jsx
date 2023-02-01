@@ -37,7 +37,7 @@ const links = [
 
 const LoungeFooter = () => {
   return (
-    <Box bg="orange.200" borderTop={'1px solid #37496A'}>
+    <Box bg="#edb06d" borderTop={'1px solid #37496A'}>
       <Box
         display="flex"
         padding={'15px'}
