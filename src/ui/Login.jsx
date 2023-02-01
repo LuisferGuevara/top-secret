@@ -131,8 +131,8 @@ export const Login = (props) => {
     <Container
       bg="#37496A"
       maxW="md"
-      mt="50px"
-      marginBottom={"100px"}
+      // mt="50px"
+      // marginBottom={"100px"}
       h={{
         base: "780px",
         md: "780px",
