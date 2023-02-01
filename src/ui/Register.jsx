@@ -119,6 +119,7 @@ import { NavLink } from "react-router-dom";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import useSpinner from '../hooks/useSpinner.hook';
 
 const Register = () => {
   const {
@@ -127,6 +128,7 @@ const Register = () => {
     watch,
     formState: { errors, isSubmitting },
   } = useForm();
+  const { registerSpinner } = useSpinner();
 
   function onSubmit(values) {
     return new Promise((resolve) => {
@@ -388,7 +390,7 @@ const Register = () => {
                 color="whitesmoke"
                 border="1px solid orange"
                 fontWeight={"bold"}
-                isLoading={isSubmitting}
+                isLoading={resgisterSpinner}
                 _hover={{
                   backgroundColor: "orange.300",
                   color: "#23375B",
