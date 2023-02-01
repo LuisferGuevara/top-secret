@@ -135,6 +135,7 @@ export const Login = props => {
       maxW="md"
       mt="50px"
       marginBottom={'100px'}
+
       h={{
         base: '780px',
         md: '780px',

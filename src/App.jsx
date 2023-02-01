@@ -14,7 +14,7 @@ import Account from './ui/Dashboard/Account';
 import Settings from './ui/Dashboard/Settings';
 import Admin from './ui/Dashboard/Admin/Admin';
 import Lounge from './ui/Lounge/Lounge';
-import Wellcome from './ui/Lounge/Pages/Home';
+import Welcome from './ui/Lounge/Pages/Home';
 import Shop from './ui/Lounge/Pages/Shop/Shop';
 import Contact from './ui/Lounge/Pages/Contact/Contact';
 import { Cart } from './ui/Lounge/Pages/Cart/Cart';
@@ -47,7 +47,7 @@ const App = () => {
       >
         <Routes>
         <Route path="lounge"  element={<Lounge/>}>
-          <Route path='home' element={<Wellcome/>}/>
+          <Route path='home' element={<Welcome/>}/>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="shop" element={<Shop/>} />
