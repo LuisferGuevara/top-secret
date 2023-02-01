@@ -13,6 +13,15 @@ import Support from './ui/Dashboard/Support';
 import Account from './ui/Dashboard/Account';
 import Settings from './ui/Dashboard/Settings';
 import Admin from './ui/Dashboard/Admin/Admin';
+import Lounge from './ui/Lounge/Lounge';
+import Wellcome from './ui/Lounge/Pages/Home';
+import Shop from './ui/Lounge/Pages/Shop/Shop';
+import Contact from './ui/Lounge/Pages/Contact/Contact';
+import { Cart } from './ui/Lounge/Pages/Cart/Cart';
+import Payment from './ui/Lounge/Pages/Payment/Payment';
+import About from './ui/Lounge/Pages/Info/About';
+import Cookies from './ui/Lounge/Pages/Info/Cookies';
+import TermsConditions from './ui/Lounge/Pages/Info/TermsConditions';
 
 
 
@@ -37,7 +46,20 @@ const App = () => {
         // bgGradient={{ base: 'linear(to-r, blue.600, purple.600)' }}
       >
         <Routes>
-          <Route index element={<Home />} />
+        <Route path="lounge"  element={<Lounge/>}>
+          <Route path='home' element={<Wellcome/>}/>
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="shop" element={<Shop/>} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="payment" element={<Payment />} />
+          <Route path="about" element={<About />} />
+          <Route path="cookies" element={<Cookies />} />
+          <Route path="terms-conditions" element={<TermsConditions />} />
+        </Route>
+          {/* <Route index element={<Home />} /> */}
+          <Route path="/campus" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="dashboard" element={<Dashboard />}>
@@ -49,7 +71,7 @@ const App = () => {
             <Route path="settings" element={<Settings />} />
             <Route path="admin" element={<Admin />} />
           </Route>
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<Lounge />} />
         </Routes>
       </Flex>
     </Flex>
