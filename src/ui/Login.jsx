@@ -111,39 +111,46 @@ import {
   IconButton,
   Checkbox,
   Container,
-} from "@chakra-ui/react";
-import * as React from "react";
-import { HiEye, HiEyeOff } from "react-icons/hi";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { FaLock, FaUserAlt } from "react-icons/fa";
+} from '@chakra-ui/react';
+import * as React from 'react';
+import { useForm } from 'react-hook-form'
+import { HiEye, HiEyeOff } from 'react-icons/hi';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { FaLock, FaUserAlt } from 'react-icons/fa';
+import useSpinner from '../hooks/useSpinner.hook';
+import authUseCases from '../core/auth/domain/auth.usecases';
 
-export const Login = (props) => {
+export const Login = props => {
   const [isHidden, setIsHidden] = useState(true);
-  const [identifier, setIdentifier] = useState("");
-  const [password, setPassword] = useState("");
+  const [identifier, setIdentifier] = useState('');
+  const [password, setPassword] = useState('');
+  const { register, handleSubmit } = useForm();
+  const { login } = authUseCases();
+  const { loginSpinner } = useSpinner();
 
-  const handleSubmit = (e) => {
+  /* const handleSubmit = e => {
     e.preventDefault(); //para hacer login con email o username
-  };
+  }; */
 
   return (
     <Container
       bg="#37496A"
       maxW="md"
-      // mt="50px"
-      // marginBottom={"100px"}
+      mt="50px"
+      marginBottom={'100px'}
+
       h={{
-        base: "780px",
-        md: "780px",
-        lg: "780px",
+        base: '780px',
+        md: '780px',
+        lg: '780px',
       }}
-      border='1px solid orange'
+      border="1px solid orange"
       borderRadius="16px"
       // boxShadow=" 2px 1px 1px  0.5px gray"
       py={{
-        base: "12",
-        md: "20",
+        base: '12',
+        md: '20',
       }}
       w="calc( 100% - 40px)"
     >
@@ -152,12 +159,12 @@ export const Login = (props) => {
           <Stack spacing="6" align="center" {...props}>
             <Stack spacing="3" textAlign="center">
               <Text
-                fontSize={"2rem"}
+                fontSize={'2rem'}
                 fontWeight="bold"
                 color="whitesmoke"
                 size={{
-                  base: "xs",
-                  md: "sm",
+                  base: 'xs',
+                  md: 'sm',
                 }}
               >
                 Accede a tu cuenta
@@ -166,38 +173,31 @@ export const Login = (props) => {
           </Stack>
           <Stack spacing="12">
             <Stack spacing="12">
-              <FormControl w="90%" alignSelf="center">
+              <FormControl isRequired w="90%" alignSelf="center">
                 {/* En el controlador de inicio de sesión en el servidor, se puede verificar si el identificador 
                 proporcionado es un email o un username y luego buscar en la base de datos el usuario correspondiente. 
                 De esta manera, el usuario puede iniciar sesión con su email o su username sin tener que preocuparse 
-                por usar el correcto.*/}{" "}
-                <FormLabel
-                  htmlFor="email"
-                  color="whitesmoke"
-                  fontSize={"1.2rem"}
-                >
+                por usar el correcto.*/}{' '}
+                <FormLabel htmlFor="email" color="whitesmoke" fontSize={'1.2rem'}>
                   Usuario
                 </FormLabel>
                 <Input
                   bg="gray.300"
                   id="email"
-                  type="text"
+                  type="email"
                   color="#23375B"
-                  fontSize={"1.2rem"}
+                  fontSize={'1.2rem'}
                   fontWeight="semibold"
-                  value={identifier}
-                  onChange={(e) => setIdentifier(e.target.value)}
+                  {...register ('email')}
+                  // value={identifier}
+                  // onChange={e => setIdentifier(e.target.value)}
                   placeholder="Introduce tu email o nombre de usuario"
-                  _placeholder={{ color: "#23375B", fontSize: 'lg' }}
+                  _placeholder={{ color: '#23375B', fontSize: 'lg' }}
                   icon={<FaUserAlt />}
                 />
               </FormControl>
-              <FormControl w="90%" alignSelf="center">
-                <FormLabel
-                  htmlFor="password"
-                  color="whitesmoke"
-                  fontSize={"1.2rem"}
-                >
+              <FormControl isRequired w="90%" alignSelf="center">
+                <FormLabel htmlFor="password" color="whitesmoke" fontSize={'1.2rem'}>
                   Contraseña
                 </FormLabel>
                 <InputGroup>
@@ -205,31 +205,32 @@ export const Login = (props) => {
                     <IconButton
                       onClick={() => setIsHidden(!isHidden)}
                       color="#23375B"
-                      fontSize={"1.4rem"}
+                      fontSize={'1.4rem'}
                       bg="transparent"
                       icon={isHidden ? <HiEye /> : <HiEyeOff />}
                     >
-                      {isHidden ? "Mostrar contraseñas" : "Ocultar contraseñas"}
+                      {isHidden ? 'Mostrar contraseñas' : 'Ocultar contraseñas'}
                     </IconButton>
                   </InputRightElement>
                   <Input
                     bg="gray.300"
                     id="password"
-                    type={isHidden ? "password" : "text"}
+                    type={isHidden ? 'password' : 'text'}
                     color="#23375B"
-                    fontSize={"1.2rem"}
+                    fontSize={'1.2rem'}
                     fontWeight="semibold"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder={"Introduce tu contraseña"}
-                    _placeholder={{ color: "#23375B", fontSize: 'lg'  }}
+                    {...register('password')}
+                    // value={password}
+                    // onChange={e => setPassword(e.target.value)}
+                    placeholder={'Introduce tu contraseña'}
+                    _placeholder={{ color: '#23375B', fontSize: 'lg' }}
                     icon={<FaLock />} //no se ve icono
                   />
                 </InputGroup>
               </FormControl>
             </Stack>
             <HStack justify="start" spacing="1">
-              <Checkbox defaultChecked color="whitesmoke" pl='20px'>
+              <Checkbox defaultChecked color="whitesmoke" pl="20px">
                 Mantener la sesión iniciada
               </Checkbox>
             </HStack>
@@ -239,24 +240,26 @@ export const Login = (props) => {
               </Button>
             </HStack>
             <Stack spacing="6" pt="3em">
-              <NavLink
+              <Button
                 w="90%"
-                alignSelf={"center"}
+                alignSelf={'center'}
                 type="submit"
-                backgroundColor={"#37496A"}
+                backgroundColor={'#37496A'}
                 color="whitesmoke"
                 border="1px solid orange"
-                fontWeight={"bold"}
-
-                to="/campus"
+                fontWeight={'bold'}
+                variant='solid'
+                // to="/campus" la idea es que después del login nos redirija al campus virtual
+                isLoading={loginSpinner}
+                loadingText="Accediendo..."
                 _hover={{
-                  backgroundColor: "orange.300",
-                  color: "#23375B",
+                  backgroundColor: 'orange.300',
+                  color: '#23375B',
                 }}
               >
-                {" "}
-                INICIAR SESIÓN
-              </NavLink>
+                {/* {' '} */}
+                ENTRAR
+              </Button>
             </Stack>
             <Stack pt="2em">
               <HStack justify="center" spacing="1">
