@@ -137,20 +137,21 @@ const Register = () => {
     });
   }
 
-  const [isHidden, setIsHidden] = useState();
+  const [isHidden, setIsHidden] = useState(true);
 
   return (
     <Container
-      bg="white"
+      bg="#37496A"
       maxW="md"
       h={{
-        base: "750px",
-        md: "750px",
-        lg: "750px",
+        base: "780px",
+        md: "780px",
+        lg: "780px",
       }}
+      border='1px solid orange'
       borderRadius="16px"
       width="452.5px"
-      boxShadow=" 0px 1px 1px  3px #e2e8f0 "
+      // boxShadow=" 0px 1px 2px  3px #37496A "
       marginBottom={"100px"}
       mt="50px"
       py={{
@@ -164,29 +165,43 @@ const Register = () => {
           <Stack spacing="6" align="center">
             <Stack spacing="3" textAlign="center">
               <Text
-                fontSize={"1.2rem"}
+                fontSize={"2rem"}
                 fontWeight="bold"
-                color="#23375B"
+                // color="#23375B"
+                color="whitesmoke"
                 size={{
                   base: "xs",
                   md: "sm",
                 }}
               >
-                Únete a la mejor plataforma de opositores
+                Crea tu cuenta
               </Text>
-              <Text color="#23375B">Empieza a hacer tus sueños realidad</Text>
+              <Text color="whitesmoke" fontWeight={"semibold"} fontSize="1rem">
+                Empieza a hacer tus sueños realidad
+              </Text>
             </Stack>
           </Stack>
           <Stack spacing="6">
             <Stack spacing="5">
-              <FormControl isRequired isInvalid={errors.name}>
-                <FormLabel htmlFor="name" color="#23375B">
+              <FormControl
+                isRequired
+                isInvalid={errors.name}
+                w="90%"
+                alignSelf="center"
+              >
+                <FormLabel
+                  htmlFor="name"
+                  color="whitesmoke"
+                  fontSize={"1.2rem"}
+                >
                   Nombre y apellidos
                 </FormLabel>
                 <Input
+                  bg="gray.300"
                   id="name"
-                  border="1px solid #23375B"
                   color="#23375B"
+                  fontSize={"1.2rem"}
+                  fontWeight="semibold"
                   type="text"
                   {...register("name", {
                     required: "Introduce tu nombre y tus apellidos",
@@ -196,31 +211,58 @@ const Register = () => {
                     },
                   })}
                 />
-                <FormErrorMessage>{errors.name && errors.name.message}</FormErrorMessage>
+                <FormErrorMessage>
+                  {errors.name && errors.name.message}
+                </FormErrorMessage>
               </FormControl>
-              <FormControl isRequired isInvalid={errors.lastName}>
-                <FormLabel htmlFor="username" color="#23375B">
+              <FormControl
+                isRequired
+                isInvalid={errors.lastName}
+                w="90%"
+                alignSelf="center"
+              >
+                <FormLabel
+                  htmlFor="username"
+                  color="whitesmoke"
+                  fontSize={"1.2rem"}
+                >
                   Nombre de usuario
                 </FormLabel>
                 <Input
+                  bg="gray.300"
                   id="username"
-                  border="1px solid #23375B"
                   color="#23375B"
+                  fontSize={"1.2rem"}
+                  fontWeight="semibold"
                   type="text"
                   {...register("username", {
                     required: "Introduce un nombre de usuario",
                   })}
                 />
-                <FormErrorMessage>{errors.username && errors.username.message}</FormErrorMessage>
+                <FormErrorMessage>
+                  {errors.username && errors.username.message}
+                </FormErrorMessage>
               </FormControl>
-              <FormControl isRequired isInvalid={errors.email}>
-                <FormLabel htmlFor="email" color="#23375B">
+              <FormControl
+                isRequired
+                isInvalid={errors.email}
+                w="90%"
+                alignSelf="center"
+              >
+                <FormLabel
+                  htmlFor="email"
+                  color="whitesmoke"
+                  fontSize={"1.2rem"}
+                >
                   Email
                 </FormLabel>
                 <Input
+                  // w='70%'
+                  bg="gray.300"
                   id="email"
-                  border="1px solid #23375B"
                   color="#23375B"
+                  fontSize={"1.2rem"}
+                  fontWeight="semibold"
                   type="email"
                   {...register("email", {
                     required: "Este campo es requerido",
@@ -232,10 +274,21 @@ const Register = () => {
                     },
                   })}
                 />
-                <FormErrorMessage>{errors.email && errors.email.message}</FormErrorMessage>
+                <FormErrorMessage>
+                  {errors.email && errors.email.message}
+                </FormErrorMessage>
               </FormControl>
-              <FormControl isRequired isInvalid={errors.password}>
-                <FormLabel htmlFor="password" color="#23375B">
+              <FormControl
+                isRequired
+                isInvalid={errors.password}
+                w="90%"
+                alignSelf="center"
+              >
+                <FormLabel
+                  htmlFor="password"
+                  color="whitesmoke"
+                  fontSize={"1.2rem"}
+                >
                   Constraseña
                 </FormLabel>
                 <InputGroup>
@@ -243,18 +296,21 @@ const Register = () => {
                     <IconButton
                       onClick={() => setIsHidden(!isHidden)}
                       color="#23375B"
+                      fontSize={"1.4rem"}
                       bg="transparent"
                       _hover="none"
-                      icon={isHidden ? <HiEyeOff /> : <HiEye />}
+                      icon={isHidden ? <HiEye /> : <HiEyeOff />}
                     >
                       {isHidden ? "Mostrar contraseñas" : "Ocultar contraseñas"}
                     </IconButton>
                   </InputRightElement>
                   <Input
+                    bg="gray.300"
                     id="password"
-                    border="1px solid #23375B"
                     type={isHidden ? "password" : "text"}
                     color="#23375B"
+                    fontSize={"1.2rem"}
+                    fontWeight="semibold"
                     {...register("password", {
                       required: "Este campo es requerido",
                       pattern: {
@@ -265,14 +321,25 @@ const Register = () => {
                     })}
                   />
                 </InputGroup>
-                <FormHelperText color="#23375B" align="start">
-                  La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, una
-                  minúscula y una mayúscula
+                <FormHelperText color="whitesmoke" align="start">
+                  La contraseña debe tener entre 8 y 16 caracteres, al menos un
+                  dígito, una minúscula y una mayúscula
                 </FormHelperText>
-                <FormErrorMessage>{errors.password && errors.password?.message}</FormErrorMessage>
+                <FormErrorMessage>
+                  {errors.password && errors.password?.message}
+                </FormErrorMessage>
               </FormControl>
-              <FormControl isRequired isInvalid={errors.confirm_password}>
-                <FormLabel color="#23375B" htmlFor="confirm_password">
+              <FormControl
+                isRequired
+                isInvalid={errors.confirm_password}
+                w="90%"
+                alignSelf="center"
+              >
+                <FormLabel
+                  color="whitesmoke"
+                  htmlFor="confirm_password"
+                  fontSize={"1.2rem"}
+                >
                   Confirma tu contraseña
                 </FormLabel>
                 <InputGroup>
@@ -280,17 +347,20 @@ const Register = () => {
                     <IconButton
                       onClick={() => setIsHidden(!isHidden)}
                       color="#23375B"
+                      fontSize={"1.4rem"}
                       bg="transparent"
                       _hover="none"
-                      icon={isHidden ? <HiEyeOff /> : <HiEye />}
+                      icon={isHidden ? <HiEye /> : <HiEyeOff />}
                     >
                       {isHidden ? "Mostrar contraseñas" : "Ocultar contraseñas"}
                     </IconButton>
                   </InputRightElement>
                   <Input
+                    bg="gray.300"
                     id="passwordConfirmation"
-                    border="1px solid #23375B"
                     color="#23375B"
+                    fontSize={"1.2rem"}
+                    fontWeight="semibold"
                     type={isHidden ? "password" : "text"}
                     {...register("confirm_password", {
                       required: "Este campo es requerido",
@@ -302,7 +372,7 @@ const Register = () => {
                     })}
                   />
                 </InputGroup>
-                <FormHelperText color="#23375B" align="start">
+                <FormHelperText color="whitesmoke" align="start">
                   Confirmar contraseña
                 </FormHelperText>
                 <FormErrorMessage>
@@ -312,12 +382,16 @@ const Register = () => {
             </Stack>
             <Stack spacing="4">
               <Button
-                backgroundColor={"#2D3748"}
-                color="white"
+                w="90%"
+                alignSelf="center"
+                backgroundColor={"#37496A"}
+                color="whitesmoke"
+                border="1px solid orange"
+                fontWeight={"bold"}
                 isLoading={isSubmitting}
                 _hover={{
-                  backgroundColor: "#2D3748",
-                  color: "white",
+                  backgroundColor: "orange.300",
+                  color: "#23375B",
                 }}
                 loadingText="Creando cuenta..."
               >
@@ -325,12 +399,12 @@ const Register = () => {
               </Button>
             </Stack>
           </Stack>
-          <HStack justify="start" spacing="2" pt="10px">
-            <Text fontSize="sm" color="#23375B">
-              ¿Formas parte de nuestra comunidad?
+          <HStack justify="center" spacing="2" pt="5px">
+            <Text  color="whitesmoke">
+              ¿Ya formas parte de nuestra comunidad?
             </Text>
-            <NavLink to="/login" color="red">
-              <Text color="#3182CE" fontWeight="medium">
+            <NavLink to="/lounge/login" color="red">
+              <Text /*color=" #3182CE "*/ color= 'orange.300' fontWeight="medium">
                 Inicia sesión
               </Text>
             </NavLink>

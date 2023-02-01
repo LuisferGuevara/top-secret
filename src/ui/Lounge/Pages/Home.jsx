@@ -339,7 +339,7 @@ const Wellcome = () => {
           <Heading fontSize={15} color="#23375b">
             ¿ ALGUNA DUDA O CONSULTA ?
           </Heading>
-          <Text fontSize={14} color="whitesmoke" my={10}>
+          <Text fontSize={14} color="#23375b" my={10}>
             No dudes en llamarnos o escribirnos. Estaremos encantados de
             ayudarte.
           </Text>
@@ -348,7 +348,7 @@ const Wellcome = () => {
             w="30"
             to="/contact"
             bg="#23375B"
-            color="#23375b"
+            color="white"
             border="solid 1px #23375b"
             _hover={{
               color: "#23375B",
@@ -364,8 +364,8 @@ const Wellcome = () => {
       {isDesktop ? (
         <Stack paddingX={100} mb="100px" color="#23375B">
           <Heading>OPINIONES</Heading>
-          <Box bg="#23375b" color="whitesmoke" border="1px" borderRadius="20px" p={6}>
-            <Text>Material y Tests realmente fantástico</Text>
+          <Box bg="#23375b"  border="1px" borderRadius="20px" p={6}>
+            <Text color="whitesmoke">Material y Tests realmente fantástico</Text>
           </Box>
           <Box>
             <Icon></Icon>
