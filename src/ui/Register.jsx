@@ -144,7 +144,7 @@ const Register = () => {
       bg="#37496A"
       maxW="md"
       h={{
-        base: "780px",
+        base: "820px",
         md: "780px",
         lg: "780px",
       }}
@@ -152,8 +152,7 @@ const Register = () => {
       borderRadius="16px"
       width="452.5px"
       // boxShadow=" 0px 1px 2px  3px #37496A "
-      marginBottom={"100px"}
-      mt="50px"
+      // marginBottom={"100px"}
       py={{
         base: "6",
         md: "4",
