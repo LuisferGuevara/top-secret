@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const links = [
   {
     label: "Sobre nosotros",
-    path: "/about",
+    path: "/lounge/about",
   },
   /*   {
           label: 'Aviso legal',
@@ -17,11 +17,11 @@ const links = [
         }, */
   {
     label: "Términos y condiciones",
-    path: "/termsconditions",
+    path: "/lounge/terms-conditions",
   },
   {
     label: "Política de cookies",
-    path: "/cookies",
+    path: "/lounge/cookies",
   },
   {
     label: "B.O.E.",
