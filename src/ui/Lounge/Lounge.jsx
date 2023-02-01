@@ -4,7 +4,7 @@ import Home from '../Home';
 
 import { Navbar } from "./Pages/Navbar/Navbar";
 import Pie from "./Pages/Footer/Footer";
-import Wellcome from './Pages/Home';
+import Welcome from './Pages/Home';
 import { Box, Flex } from '@chakra-ui/react';
 
 const Lounge = () => {
