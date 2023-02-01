@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
-const Wellcome = () => {
+const Welcome = () => {
   const isDesktop = useBreakpointValue({ base: false, lg: true });
 
   return (
@@ -50,16 +50,16 @@ const Wellcome = () => {
               p="20px"
               
             >
-              <Heading fontSize={50} letterSpacing={3} color="#23375B">
+              <Heading fontSize={50} letterSpacing={3} color="#37496A">
                 BIENVENID@S
               </Heading>
-              <Text m="80px 0 20px 0" color="#23375B">
+              <Text m="80px 0 20px 0" color="#37496A">
                 Prepárate para mejorar tu escalafón
               </Text>
               <Text w={{
                 sm:"100%",
                 md:"600px"
-              }} color="#23375B" textAlign="center" >
+              }} color="#37496A" textAlign="center" >
                 En Uniforme Azul te queremos ayudar con nuestros cursos de
                 exámenes tipo test, libros de resúmenes, esquemas y exámenes
                 tipo test en papel
@@ -73,11 +73,11 @@ const Wellcome = () => {
               >
                 <Button
                   p={7}
-                  bg="#ffffffc4"
-                  color="#23375b"
+                  bg="#37496A"
+                  color="orange.300"
                   justifyContent="space-around"
                   _hover={{
-                    bg: "white",
+                    bg: "#435981",
                     transform: "scale(1.1)",
                     transition: "transform 500ms",
                     boxShadow: "6px 8px 5px -2px rgba(35,55,91,0.75)"
@@ -90,11 +90,11 @@ const Wellcome = () => {
                   to="/courses"
                   p={7}
                   w="100%"
-                  bg="#ffffffc4"
-                  color="#23375b"
+                  bg="#37496A"
+                  color="orange.300"
                   justifyContent="space-around"
                   _hover={{
-                    bg: "white",
+                    bg: "#435981",
                     transform: "scale(1.1)",
                     transition: "transform 500ms",
                     boxShadow: "6px 8px 5px -2px rgba(35,55,91,0.75)"
@@ -107,11 +107,11 @@ const Wellcome = () => {
                   to="/shop"
                   p={7}
                   w="100%"
-                  bg="#ffffffc4"
-                  color="#23375b"
+                  bg="#37496A"
+                  color="orange.300"
                   justifyContent="space-around"
                   _hover={{
-                    bg: "white",
+                    bg: "#435981",
                     transform: "scale(1.1)",
                     transition: "transform 500ms",
                     boxShadow: "6px 8px 5px -2px rgba(35,55,91,0.75)"
@@ -125,20 +125,20 @@ const Wellcome = () => {
         ) : (
           <Flex direction="column">
             <Box>
-              <Heading fontSize={40} letterSpacing={3} color="#23375B">
+              <Heading fontSize={40} letterSpacing={3} color="#37496A">
                 BIENVENID@S
               </Heading>
-              <Text m="40px 0 20px 0" color="#23375B">
+              <Text m="40px 0 20px 0" color="#37496A">
                 Prepárate para mejorar tu escalafón
               </Text>
-              <Text color="#23375B">
+              <Text color="#37496A">
                 En Uniforme Azul te queremos ayudar con nuestros cursos de
                 exámenes tipo test, libros de resúmenes, esquemas y exámenes
                 tipo test en papel
               </Text>
             </Box>
             <Box mt="50px">
-              <ButtonGroup
+              <Flex
                 display="flex"
                 flexDirection="column"
                 alignItems="center"
@@ -147,10 +147,10 @@ const Wellcome = () => {
                 <Button
                   p={7}
                   w="100%"
-                  bg="#ffffffc4"
-                  color="#23375b"
+                  bg="#37496A"
+                  color="orange.300"
                   _hover={{
-                    bg: "white",
+                    bg: "#435981",
                     transform: "scale(1.02)",
                     transition: "transform 500ms",
                   }}
@@ -162,10 +162,10 @@ const Wellcome = () => {
                   to="/courses"
                   p={7}
                   w="100%"
-                  bg="#ffffffc4"
-                  color="#23375b"
+                  bg="#37496A"
+                  color="orange.300"
                   _hover={{
-                    bg: "white",
+                    bg: "#435981",
                     transform: "scale(1.02)",
                     transition: "transform 500ms",
                   }}
@@ -177,65 +177,65 @@ const Wellcome = () => {
                   to="/shop"
                   p={7}
                   w="100%"
-                  bg="#ffffffc4"
-                  color="#23375b"
+                  bg="#37496A"
+                  color="orange.300"
                   _hover={{
-                    bg: "white",
+                    bg: "#435981",
                     transform: "scale(1.02)",
                     transition: "transform 500ms",
                   }}
                 >
                   Acceder a la tienda
                 </Button>
-              </ButtonGroup>
+              </Flex>
             </Box>
           </Flex>
         )}
       </Box>
       {isDesktop ? (
         <Box bg="#ffffff4e" m="100px" p={7} borderRadius="20px" boxShadow="15px 13px 13px -8px rgba(35,55,91,0.75)">
-          <Heading fontSize={20} color="#23375b">
+          <Heading fontSize={20} color="#37496A">
             NUESTRA DIFERENCIA
           </Heading>
           <Grid templateColumns="1fr 1fr" gap={10} p="50px">
             <Flex
-              bg="#215DBB"
+              bg="gray.300"
               height="120px"
               alignItems="center"
               justifyContent="space-evenly"
               borderRadius="0 50px 0 50px"
-              color="whitesmoke"
+              color="#37496A"
             >
               <FiSettings fontSize="3rem" />
               <Heading fontSize={18}>Experiencia Propia</Heading>
             </Flex>
             <Flex
-              bg="#602080"
+              bg="#37496A"
               alignItems="center"
               justifyContent="space-evenly"
               borderRadius="50px 0 50px 0"
-              color="whitesmoke"
+              color="orange.300"
             >
               <FiHelpCircle fontSize="3rem" />
               <Heading fontSize={18}>Ayuda Online</Heading>
             </Flex>
             <Flex
-              bg="#602080"
+              bg="#37496A"
               height="120px"
               alignItems="center"
               justifyContent="space-evenly"
               borderRadius="50px 0 50px 0"
-              color="whitesmoke"
+              color="orange.300"
             >
               <FiClipboard fontSize="3rem" />
               <Heading fontSize={18}>Esquemas Clave</Heading>
             </Flex>
             <Flex
-              bg="#215DBB"
+              bg="gray.300"
               alignItems="center"
               justifyContent="space-evenly"
               borderRadius="0 50px 0 50px"
-              color="whitesmoke"
+              color="#37496A"
             >
               <FiBox fontSize="3rem" />
               <Heading fontSize={18}>Material Pre Ávila</Heading>
@@ -243,51 +243,51 @@ const Wellcome = () => {
           </Grid>
         </Box>
       ) : (
-        <Box bg="#ffffff4e" mt="20" p={7} borderRadius="20px">
-          <Heading fontSize={20} color="#23375b">
+        <Box bg="37496A" mt="20" p={7} borderRadius="20px">
+          <Heading fontSize={20} color="#37496A">
             NUESTRA DIFERENCIA
           </Heading>
           <Grid gap={5} pt="10">
             <Flex
-              bg="#215DBB"
+              bg="#37496A"
               height="100px"
               alignItems="center"
               justifyContent="space-evenly"
               borderRadius="10px"
-              color="whitesmoke"
+              color="orange.300"
             >
               <FiSettings fontSize="3rem" />
               <Heading fontSize={18}>Experiencia Propia</Heading>
             </Flex>
             <Flex
-              bg="#602080"
+              bg="gray.300"
               height="100px"
               alignItems="center"
               justifyContent="space-evenly"
               borderRadius="10px"
-              color="whitesmoke"
+              color="#37496A"
             >
               <FiHelpCircle fontSize="3rem" />
               <Heading fontSize={18}>Ayuda Online</Heading>
             </Flex>
             <Flex
-              bg="#215DBB"
+              bg="#37496A"
               height="100px"
               alignItems="center"
               justifyContent="space-evenly"
               borderRadius="10px"
-              color="whitesmoke"
+              color="orange.300"
             >
               <FiClipboard fontSize="3rem" />
               <Heading fontSize={18}>Esquemas Clave</Heading>
             </Flex>
             <Flex
-              bg="#602080"
+              bg="gray.300"
               height="100px"
               alignItems="center"
               justifyContent="space-evenly"
               borderRadius="10px"
-              color="whitesmoke"
+              color="#37496A"
             >
               <FiBox fontSize="3rem" />
               <Heading fontSize={18}>Material Pre Ávila</Heading>
@@ -304,22 +304,22 @@ const Wellcome = () => {
           borderRadius="25px"
           boxShadow="15px 13px 13px -8px rgba(35,55,91,0.75)"
         >
-          <Heading fontSize={20} color="#23375b">
+          <Heading fontSize={20} color="#37496A">
             ¿ ALGUNA DUDA O CONSULTA ?
           </Heading>
-          <Text color="#23375b" my={10}>
+          <Text color="#37496A" my={10}>
             No dudes en llamarnos o escribirnos. Estaremos encantados de
             ayudarte.
           </Text>
           <Button
             as={NavLink}
             to="/contact"
-            bg="#23375B"
+            bg="#37496A"
             color="whitesmoke"
-            border="solid 1px #23375b"
+            border="solid 1px #37496A"
             _hover={{
               color: "whitesmoke",
-              bg: "#23375b",
+              bg: "#37496A",
               transform: "scale(1.05)",
               transition: "transform 500ms",
             }}
@@ -336,10 +336,10 @@ const Wellcome = () => {
           spacing="5px"
           borderRadius="25px"
         >
-          <Heading fontSize={15} color="#23375b">
+          <Heading fontSize={15} color="#37496A">
             ¿ ALGUNA DUDA O CONSULTA ?
           </Heading>
-          <Text fontSize={14} color="#23375b" my={10}>
+          <Text fontSize={14} color="#37496A" my={10}>
             No dudes en llamarnos o escribirnos. Estaremos encantados de
             ayudarte.
           </Text>
@@ -347,12 +347,12 @@ const Wellcome = () => {
             as={NavLink}
             w="30"
             to="/contact"
-            bg="#23375B"
-            color="white"
-            border="solid 1px #23375b"
+            bg="#37496A"
+            color="whitesmoke"
+            border="solid 1px #37496A"
             _hover={{
-              color: "#23375B",
-              bg: "#23375b",
+              color: "#37496A",
+              bg: "#37496A",
               transform: "scale(1.05)",
               transition: "transform 500ms",
             }}
@@ -362,9 +362,9 @@ const Wellcome = () => {
         </Box>
       )}
       {isDesktop ? (
-        <Stack paddingX={100} mb="100px" color="#23375B">
-          <Heading>OPINIONES</Heading>
-          <Box bg="#23375b"  border="1px" borderRadius="20px" p={6}>
+        <Stack paddingX={100} mb="100px" color="#37496A">
+          <Heading color="#37496A">OPINIONES</Heading>
+          <Box bg="#37496A"  border="1px" borderRadius="20px" p={6}>
             <Text color="whitesmoke">Material y Tests realmente fantástico</Text>
           </Box>
           <Box>
@@ -375,13 +375,13 @@ const Wellcome = () => {
         </Stack>
       ) : (
         <Stack w="100%" my="20" gap={3}>
-          <Heading fontSize={22}>OPINIONES</Heading>
-          <Box bg="#23375b" border="1px" borderRadius="20px" p={6}>
+          <Heading color="#37496A" fontSize={22}>OPINIONES</Heading>
+          <Box bg="#37496A" border="1px" borderRadius="20px" p={6}>
             <Text fontSize={14}>Material y Tests realmente fantástico</Text>
           </Box>
-          <Box>
+          <Box color="#37496A">
             <Icon></Icon>
-            <Text>"Paquito"</Text>
+            <Text>Ayuda</Text>
           </Box>
           <Box></Box> {/* Función para que cambiando el resultado */}
         </Stack>
@@ -390,4 +390,4 @@ const Wellcome = () => {
   );
 };
 
-export default Wellcome;
+export default Welcome;
