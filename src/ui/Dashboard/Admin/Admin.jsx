@@ -5,7 +5,9 @@ const Admin = () => {
   return (
     <Flex flexDirection={'column'}>
       <Heading flex={1} size={'md'} mb="20px">
-        Muy Buenas Admin, aquí tienes la lista completa de test, de los cuales podrás editar su contenido. 
+Si quieres editar los test, ¡paga!
+{/* Plataforma de edición. Reservada a administradores. Pulse en una pregunta para editarla. */}
+
       </Heading>
       <Cartita />
     </Flex>
