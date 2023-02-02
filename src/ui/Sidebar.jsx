@@ -51,7 +51,7 @@ const links = [
     icon: FiBookmark,
   },
   {
-    path: '/dashboard/home',
+    path: '/dashboard/favorites',
     text: 'Favoritos',
     icon: FiStar,
   },
@@ -61,7 +61,7 @@ const links = [
     icon: FiEdit,
   },
   {
-    path: '/dashboard/home',
+    path: '/dashboard/messages',
     text: 'Mensajes',
     icon: FiMail,
   },

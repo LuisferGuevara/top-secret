@@ -10,7 +10,7 @@ const Dashboard = () => {
       <Flex
         as="section"
         w="full"
-        maxW={"1440px"}
+        // maxW={"1440px"}
         direction={{ base: 'column', lg: 'row' }}
         height="100vh"
         // bg="#D3CCE3"

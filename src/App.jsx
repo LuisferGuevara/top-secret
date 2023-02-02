@@ -62,6 +62,8 @@ const App = () => {
             <Route path="tests" element={<Tests />} />
             <Route path="my-questions" element={<MyQuestions />} />
             <Route path="myaccount" element={<Account />}/>
+            <Route path="favorites" element={<div>Favoooooritos</div>}/>
+            <Route path="messages" element={<div>Mensajeeeess</div>}/>
             <Route path="support" element={<Support />} />
             <Route path="settings" element={<Settings />} />
             <Route path="admin" element={<Admin />} />
