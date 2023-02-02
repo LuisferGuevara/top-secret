@@ -41,9 +41,7 @@ const App = () => {
         align="center"
         textAlign="center"
         gap={10}
-        bg="#D3CCE3"
-        bgGradient={"linear(to right, #E9E4F0, #D3CCE3"}
-        // bgGradient={{ base: 'linear(to-r, blue.600, purple.600)' }}
+        bg=" #96a7c8"
       >
         <Routes>
         <Route path="lounge"  element={<Lounge/>}>
@@ -58,10 +56,7 @@ const App = () => {
           <Route path="cookies" element={<Cookies />} />
           <Route path="terms-conditions" element={<TermsConditions />} />
         </Route>
-          {/* <Route index element={<Home />} /> */}
           <Route path="/campus" element={<Home />} />
-          {/* <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} /> */}
           <Route path="dashboard" element={<Dashboard />}>
             <Route path="home" element={<DashboardHome />} />
             <Route path="tests" element={<Tests />} />
@@ -71,7 +66,8 @@ const App = () => {
             <Route path="settings" element={<Settings />} />
             <Route path="admin" element={<Admin />} />
           </Route>
-          <Route path="*" element={<Lounge />} />
+          {/* Deberia redirigir a Lounge/Home */}
+          <Route path="*" element={<Lounge />} /> 
         </Routes>
       </Flex>
     </Flex>

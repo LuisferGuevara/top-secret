@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
-import "../Tiny/Editor__Styles.css";
+import { Button, Flex } from "@chakra-ui/react";
 
 async function verifyPermissions(handle) {
   /* --> verifica los permisos para acceder al archivo línea 40 */
@@ -74,7 +74,8 @@ export default function EditorComponent(props) {
           // INVESTIGAR COMO VOLCAR LA INFO DE LOS TEST A LA CAJA DE TEXTO
           initialValue={props.defaultValue}
           init={{
-            height: 900,
+            height: 550,
+
             editimage_cors_hosts: ["picsum.photos"],
             menubar: "file edit view insert format tools table help",
             plugins: [
@@ -196,21 +197,39 @@ export default function EditorComponent(props) {
             //   content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:16px }",
           }}
         />
-        <button name="submitbtn" onClick={save}>
-          GUARDAR YESS
-        </button>{" "}
+        <Flex  justifyContent={"space-between"} pt="20px" flexDirection={{
+          base:"column",
+        }}>
+
+        <Button  onClick={save} my={{
+          sm:"5px"
+          
+        }}
+        bg="orange.300"
+                    _hover={{bg:"orange.300"}}>
+          GUARDAR "SAVE"
+        </Button>{" "}
         {/* ---> maneja el evento de envío del formulario
        y llama a la función "props.editedResponse" con el contenido del editor.*/}
-        <button className="btn2" onClick={log}>
-          Guardar cambios
-        </button>{" "}
+        <Button onClick={log} my={{
+          sm:"5px"
+        }}
+        bg="orange.300"
+                    _hover={{bg:"orange.300"}}>
+          Guardar CAMBIOS "LOG"
+        </Button>{" "}
         {/* --> La función log imprime en la consola el contenido del editor TinyMCE.
        Se accede al contenido a través de editorRef.current.getContent(). */}
-        <button className="btn2" onClick={saveFile}>
-          Guardar cambios en archivo local
-        </button>{" "}
+        <Button c onClick={saveFile} my={{
+          sm:"5px"
+        }}
+        bg="orange.300"
+                    _hover={{bg:"orange.300"}}>
+          Guardar cambios en archivo local "SAVE FILE"
+        </Button>{" "}
         {/* --> guarda el contenido del editor 
       en un archivo en el sistema local del usuario. */}
+        </Flex>
       </form>
     </section>
   );
