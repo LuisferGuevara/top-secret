@@ -43,7 +43,7 @@ const QuestionLists = () => {
                   </Button>
                 </Flex>
                 <Flex
-                  bg="orange.100"
+ bg={ isOpen ? "orange.100" : "tranparent"}
                   flexDirection={'column'}
                   align="start"
                   px="5px"
@@ -52,6 +52,7 @@ const QuestionLists = () => {
                   borderRadius={'14px'}
                   style={{
                     maxHeight: isOpen ? '100%' : '0',
+                   
                     overflow: 'hidden',
                     transition: 'max-height 0.3s ease-out',
                   }}
