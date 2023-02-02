@@ -3,7 +3,7 @@ import { useState } from "react";
 import { RadioCard, RadioCardGroup } from "./RadioCardGroup"; 
 import EditorComponent from "./Tiny/Editor";
 
-const Question = ({ question }) => {
+const EditableTest = ({ question }) => {
     const [isEditing, setIsEditing] = useState(false);
     const submit = (value) => {
         console.log(value);
@@ -45,4 +45,4 @@ const Question = ({ question }) => {
     )
 };
 
-export default Question;
+export default EditableTest;
