@@ -113,7 +113,7 @@ import {
   Container,
 } from '@chakra-ui/react';
 import * as React from 'react';
-import { useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form';
 import { HiEye, HiEyeOff } from 'react-icons/hi';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
@@ -137,9 +137,6 @@ export const Login = props => {
     <Container
       bg="#37496A"
       maxW="md"
-      mt="50px"
-      marginBottom={'100px'}
-
       h={{
         base: '780px',
         md: '780px',
@@ -188,7 +185,7 @@ export const Login = props => {
                   color="#23375B"
                   fontSize={'1.2rem'}
                   fontWeight="semibold"
-                  {...register ('email')}
+                  {...register('email')}
                   // value={identifier}
                   // onChange={e => setIdentifier(e.target.value)}
                   placeholder="Introduce tu email o nombre de usuario"
@@ -248,7 +245,7 @@ export const Login = props => {
                 color="whitesmoke"
                 border="1px solid orange"
                 fontWeight={'bold'}
-                variant='solid'
+                variant="solid"
                 // to="/campus" la idea es que después del login nos redirija al campus virtual
                 isLoading={loginSpinner}
                 loadingText="Accediendo..."

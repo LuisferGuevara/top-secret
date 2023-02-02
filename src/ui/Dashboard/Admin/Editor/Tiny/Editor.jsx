@@ -67,7 +67,6 @@ export default function EditorComponent(props) {
 
   return (
     <section>
-      <h1>Hola Admin, vas a editar: "insertar test"</h1>
       <form>
         <Editor
           apiKey="7v1e6x9jdvuh68elzfbx9y82ipi3g9akrjzhlh8kc0cx79gg"

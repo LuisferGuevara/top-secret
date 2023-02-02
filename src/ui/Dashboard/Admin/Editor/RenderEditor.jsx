@@ -4,10 +4,7 @@ import QuestionLists from "./QuestionList";
 function RenderEditor() {
     return (
         <div >
-            {/* <EditorComponent /> */}
-
             <QuestionLists />
-
         </div>
     );
 }
