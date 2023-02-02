@@ -25,7 +25,8 @@ const QuestionLists = () => {
                 <Text my="5x" py="15px" textAlign={'start'} maxW="80%">
                   {array(unit)[0]}
                 </Text>
-                <Button my="10px">
+                {/* Esto debe de ser un despeglable, que al hacer clic muestre los test o los guarde */}
+                <Button my="10px"> 
                   <p>Ver</p>
                   <Icon as={TriangleDownIcon} mx="2px" />
                 </Button>
@@ -34,6 +35,7 @@ const QuestionLists = () => {
                 {unit[array(unit)[0]].map(test => (
                   <Flex justifyContent={'space-between'} w="100%" my="8px">
                     <Text py="6px">{array(test)[0]}</Text>
+                    {/* Tiene que lanzar una nueva paguina donde renderize el test a editar, por su id?  */}
                     <Button>Editar</Button>
                   </Flex>
                 ))}
