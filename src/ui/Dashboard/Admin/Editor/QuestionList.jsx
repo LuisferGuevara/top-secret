@@ -1,67 +1,36 @@
-import { Box, Button } from '@chakra-ui/react';
+import { TriangleDownIcon } from '@chakra-ui/icons';
+import { Box, Button, Divider, Flex, Heading, Text, Icon } from '@chakra-ui/react';
 import { useState } from 'react';
 import { data } from '../../../../tests';
 import Question from './Question';
 
 const algo = Object.values(data[0]['CIENCIAS JURIDICAS'][0])[0];
-const categoria = Object.values(data);
-const item1 = Object.values(data[0]);
+
 
 const testFromServer = [...Object.values(algo[0])].pop();
-let yago = Object.keys
-
-// const QuestionLists = () => {
-//   const [test, setTest] = useState(testFromServer);
-//   //   console.log(test);
-//   //   console.log('soy algo', algo);
-//   //   console.log('categoria', categoria);
-//   //   for (let index = 0; index < item1.length; index++) {
-//   //    console.log( "del bluce", item1[index][0])
-//   //   }
-//   return (
-//     <div>
-//       {/* <Box bg="Red">
-//         <h1>Categorías</h1>
-//         {data.map((category, idx) => {
-//           let title = Object.keys(category)[0];
-//           return (
-//             <div>
-//               <p>{title}</p>
-//             </div>
-//           );
-//         })}
-//       </Box> */} 
-//       {data.map((category) => (
-//         <h1>{Object.keys(category)[0]}</h1>
-
-//         {category[Object.keys(category)[0]].map((unit) => (
-
-//             <h2>{Object.keys(unit)[0]}</h2>
-//             ))}
-//         ))}
-
-
-      
-//       {test.map((question, index) => (
-//         <Question key={question.rightanswer + index} question={{ id: index, ...question }} />
-//       ))}
-//     </div>
-//   );
-// };
+let array = Object.keys;
 const QuestionLists = () => {
-    return (
-      <div>
-        {data.map((category, idx) => (
-          <div>
-            <h1>{yago(category)[0]}</h1>
-            {category[yago(category)[0]].map((mario) => (
-
-              <h2>{yago(mario)[0]}</h2>
-            ))}
-          </div>
-        ))}
-      </div>
-    );
-  }
+  return (
+    <div>
+      {data.map((category, idx) => (
+        <Flex flexDirection={'column'} align="flex-start" px="10px">
+          <Heading fontSize={'3xl'} pt="25px" pb="10px" bor>
+            {array(category)[0]}
+          </Heading>
+          <Divider border="2px solid #37496A" mb="10px" />
+          {category[array(category)[0]].map(unit => (
+            <Flex w="100%" justifyContent={'space-between'}>
+              <Text py="15px">{array(unit)[0]}</Text>
+              <Button>
+                <p>Ver</p>
+                <Icon as={TriangleDownIcon} mx="5px"/>
+              </Button>
+            </Flex>
+          ))}
+        </Flex>
+      ))}
+    </div>
+  );
+};
 
 export default QuestionLists;
