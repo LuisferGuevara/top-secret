@@ -30,7 +30,6 @@ let array = Object.keys;
 // }
 
 const QuestionLists = () => {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
       {data.map((category, idx) => (
@@ -39,24 +38,26 @@ const QuestionLists = () => {
             {array(category)[0]}
           </Heading>
           <Divider border="2px solid #37496A" mb="10px" />
-          {category[array(category)[0]].map((unit,index) => (
+          {category[array(category)[0]].map((unit, idx) => {
+            
+            const [isOpen, setIsOpen] = useState(false);
+            return(
             <Flex w="98%" justifyContent={'space-between'} flexDirection="column" m="0 auto">
               <Flex w="100%" justifyContent={'space-between'}>
-                <Text my="5x" py="15px" textAlign={'start'} maxW="80%" key={unit[0] + index}>
+                <Text my="5x" py="15px" textAlign={'start'} maxW="80%" key={unit[0] + idx}>
                   {array(unit)[0]}
                 </Text>
-                {/* Esto debe de ser un despeglable, que al hacer clic muestre los test o los guarde */}
-                <Button 
-                onClick={() => setIsOpen(!isOpen)}
-                alignItems={"center"}
-                justifyContent={"space-evenly"}
-                w="120px"
-                my="10px"
-                spacing="2"
+                <Button
+                  onClick={() => setIsOpen(!isOpen)}
+                  alignItems={'center'}
+                  justifyContent={'space-evenly'}
+                  w="120px"
+                  my="10px"
+                  spacing="2"
+                  key={idx}
                 >
-                {isOpen ? 'Ocultar' : ' Mostrar' }
-                {isOpen ?  <Icon as={TriangleUpIcon} mt="1x"/> :  <Icon as={TriangleDownIcon} mx="1" /> }
-                 
+                  {isOpen ? 'Ocultar' : ' Mostrar'}
+                  {isOpen ? <Icon as={TriangleUpIcon} mt="1x" /> : <Icon as={TriangleDownIcon} mx="1" />}
                 </Button>
               </Flex>
               <Flex
@@ -71,12 +72,13 @@ const QuestionLists = () => {
                   maxHeight: isOpen ? '100%' : '0',
                   overflow: 'hidden',
                   transition: 'max-height 0.3s ease-out',
-
                 }}
               >
-                {unit[array(unit)[0]].map((test,index) => (
+                {unit[array(unit)[0]].map((test, index) => (
                   <Flex justifyContent={'space-between'} w="100%" my="8px">
-                    <Text py="6px" key={test[0] + index}>{array(test)[0]}</Text>
+                    <Text py="6px" key={test[0] + index}>
+                      {array(test)[0]}
+                    </Text>
                     {/* Tiene que lanzar una nueva paguina donde renderize el test a editar, por su id?  */}
                     <Button>Editar</Button>
                     {/* {test[array(test)[0]].map((question, index) => (
@@ -86,7 +88,7 @@ const QuestionLists = () => {
                 ))}
               </Flex>
             </Flex>
-          ))}
+          )})}
         </Flex>
       ))}
     </div>
